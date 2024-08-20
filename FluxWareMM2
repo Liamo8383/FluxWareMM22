@@ -1,0 +1,780 @@
+--[=[
+ d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
+88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
+88      88    88    88            odD'      88      88    88 88ooo88 
+88  ooo 88    88    88          .88'        88      88    88 88~~~88 
+88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88    @uniquadev
+ Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
+]=]
+
+-- Instances: 37 | Scripts: 6 | Modules: 0
+local G2L = {};
+
+-- StarterGui.MM2Gui
+G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"]["IgnoreGuiInset"] = true;
+G2L["1"]["ScreenInsets"] = Enum.ScreenInsets.DeviceSafeInsets;
+G2L["1"]["Name"] = [[MM2Gui]];
+G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+G2L["1"]["ResetOnSpawn"] = false;
+
+-- StarterGui.MM2Gui.MainFrame
+G2L["2"] = Instance.new("Frame", G2L["1"]);
+G2L["2"]["BorderSizePixel"] = 0;
+G2L["2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["2"]["Size"] = UDim2.new(0.31355, 0, 0.45243, 0);
+G2L["2"]["Position"] = UDim2.new(0.49967, 0, 0.5, 0);
+G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2"]["Name"] = [[MainFrame]];
+
+-- StarterGui.MM2Gui.MainFrame.UICorner
+G2L["3"] = Instance.new("UICorner", G2L["2"]);
+G2L["3"]["CornerRadius"] = UDim.new(0, 10);
+
+-- StarterGui.MM2Gui.MainFrame.UIGradient
+G2L["4"] = Instance.new("UIGradient", G2L["2"]);
+G2L["4"]["Rotation"] = 90;
+G2L["4"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(47, 47, 47)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(36, 36, 36))};
+
+-- StarterGui.MM2Gui.MainFrame.Line
+G2L["5"] = Instance.new("Frame", G2L["2"]);
+G2L["5"]["BorderSizePixel"] = 0;
+G2L["5"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["5"]["Size"] = UDim2.new(1, 0, 0.003, 0);
+G2L["5"]["Position"] = UDim2.new(0, 0, 0.14929, 0);
+G2L["5"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["5"]["Name"] = [[Line]];
+
+-- StarterGui.MM2Gui.MainFrame.Title
+G2L["6"] = Instance.new("TextLabel", G2L["2"]);
+G2L["6"]["TextWrapped"] = true;
+G2L["6"]["BorderSizePixel"] = 0;
+G2L["6"]["TextScaled"] = true;
+G2L["6"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["6"]["TextSize"] = 14;
+G2L["6"]["FontFace"] = Font.new([[rbxasset://fonts/families/Jura.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["6"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["6"]["BackgroundTransparency"] = 1;
+G2L["6"]["Size"] = UDim2.new(1, 0, 0.15148, 0);
+G2L["6"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6"]["Text"] = [[FluxWare | MM2]];
+G2L["6"]["Name"] = [[Title]];
+
+-- StarterGui.MM2Gui.MainFrame.Title.UIGradient
+G2L["7"] = Instance.new("UIGradient", G2L["6"]);
+G2L["7"]["Rotation"] = 90;
+G2L["7"]["Transparency"] = NumberSequence.new{NumberSequenceKeypoint.new(0.000, 0),NumberSequenceKeypoint.new(0.420, 0.5625),NumberSequenceKeypoint.new(1.000, 0)};
+G2L["7"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(255, 255, 255)),ColorSequenceKeypoint.new(0.360, Color3.fromRGB(255, 255, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(21, 135, 255))};
+
+-- StarterGui.MM2Gui.MainFrame.TabFrame
+G2L["8"] = Instance.new("Frame", G2L["2"]);
+G2L["8"]["BorderSizePixel"] = 0;
+G2L["8"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["8"]["Size"] = UDim2.new(0.34778, 0, 0.84771, 0);
+G2L["8"]["Position"] = UDim2.new(-0, 0, 0.15229, 0);
+G2L["8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["8"]["Name"] = [[TabFrame]];
+
+-- StarterGui.MM2Gui.MainFrame.TabFrame.UIGradient
+G2L["9"] = Instance.new("UIGradient", G2L["8"]);
+G2L["9"]["Rotation"] = 90;
+G2L["9"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(31, 31, 31)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(47, 47, 47))};
+
+-- StarterGui.MM2Gui.MainFrame.TabFrame.UICorner
+G2L["a"] = Instance.new("UICorner", G2L["8"]);
+G2L["a"]["CornerRadius"] = UDim.new(0, 10);
+
+-- StarterGui.MM2Gui.MainFrame.TabFrame.Lines
+G2L["b"] = Instance.new("Folder", G2L["8"]);
+G2L["b"]["Name"] = [[Lines]];
+
+-- StarterGui.MM2Gui.MainFrame.TabFrame.Lines.Line
+G2L["c"] = Instance.new("Frame", G2L["b"]);
+G2L["c"]["BorderSizePixel"] = 0;
+G2L["c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["c"]["Size"] = UDim2.new(0.04908, 0, 1, 0);
+G2L["c"]["Position"] = UDim2.new(0.95092, 0, -0.00025, 0);
+G2L["c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["c"]["Name"] = [[Line]];
+
+-- StarterGui.MM2Gui.MainFrame.TabFrame.Lines.Line.UIGradient
+G2L["d"] = Instance.new("UIGradient", G2L["c"]);
+G2L["d"]["Rotation"] = 90;
+G2L["d"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(31, 31, 31)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(47, 47, 47))};
+
+-- StarterGui.MM2Gui.MainFrame.TabFrame.Lines.Line
+G2L["e"] = Instance.new("Frame", G2L["b"]);
+G2L["e"]["BorderSizePixel"] = 0;
+G2L["e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["e"]["Size"] = UDim2.new(1, 0, 0.02953, 0);
+G2L["e"]["Position"] = UDim2.new(0, 0, -0.00025, 0);
+G2L["e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["e"]["Name"] = [[Line]];
+
+-- StarterGui.MM2Gui.MainFrame.TabFrame.Lines.Line.UIGradient
+G2L["f"] = Instance.new("UIGradient", G2L["e"]);
+G2L["f"]["Rotation"] = 90;
+G2L["f"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(31, 31, 31)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(47, 47, 47))};
+
+-- StarterGui.MM2Gui.MainFrame.TabFrame.TabButtons
+G2L["10"] = Instance.new("Folder", G2L["8"]);
+G2L["10"]["Name"] = [[TabButtons]];
+
+-- StarterGui.MM2Gui.MainFrame.TabFrame.TabButtons.HomeButton
+G2L["11"] = Instance.new("TextButton", G2L["10"]);
+G2L["11"]["TextWrapped"] = true;
+G2L["11"]["BorderSizePixel"] = 0;
+G2L["11"]["TextSize"] = 14;
+G2L["11"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["11"]["TextScaled"] = true;
+G2L["11"]["BackgroundColor3"] = Color3.fromRGB(127, 143, 160);
+G2L["11"]["FontFace"] = Font.new([[rbxasset://fonts/families/Jura.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["11"]["Size"] = UDim2.new(0.90091, 0, 0.09353, 0);
+G2L["11"]["Name"] = [[HomeButton]];
+G2L["11"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["11"]["Text"] = [[Home]];
+G2L["11"]["Position"] = UDim2.new(0.04813, 0, 0.05049, 0);
+
+-- StarterGui.MM2Gui.MainFrame.TabFrame.TabButtons.HomeButton.UICorner
+G2L["12"] = Instance.new("UICorner", G2L["11"]);
+G2L["12"]["CornerRadius"] = UDim.new(0, 6);
+
+-- StarterGui.MM2Gui.MainFrame.TabFrame.TabButtons.HomeButton.LocalScript
+G2L["13"] = Instance.new("LocalScript", G2L["11"]);
+
+
+-- StarterGui.MM2Gui.MainFrame.TabFrames
+G2L["14"] = Instance.new("Folder", G2L["2"]);
+G2L["14"]["Name"] = [[TabFrames]];
+
+-- StarterGui.MM2Gui.MainFrame.TabFrames.HomeFrame
+G2L["15"] = Instance.new("Frame", G2L["14"]);
+G2L["15"]["BorderSizePixel"] = 0;
+G2L["15"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["15"]["Size"] = UDim2.new(0.65222, 0, 0.82289, 0);
+G2L["15"]["Position"] = UDim2.new(0.34778, 0, 0.17711, 0);
+G2L["15"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["15"]["Name"] = [[HomeFrame]];
+G2L["15"]["BackgroundTransparency"] = 1;
+
+-- StarterGui.MM2Gui.MainFrame.TabFrames.HomeFrame.Title
+G2L["16"] = Instance.new("TextLabel", G2L["15"]);
+G2L["16"]["TextWrapped"] = true;
+G2L["16"]["BorderSizePixel"] = 0;
+G2L["16"]["TextScaled"] = true;
+G2L["16"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["16"]["TextSize"] = 14;
+G2L["16"]["FontFace"] = Font.new([[rbxasset://fonts/families/Jura.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["16"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["16"]["BackgroundTransparency"] = 1;
+G2L["16"]["Size"] = UDim2.new(1, 0, 0.1182, 0);
+G2L["16"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["16"]["Text"] = [[Home]];
+G2L["16"]["LayoutOrder"] = 1;
+G2L["16"]["Name"] = [[Title]];
+
+-- StarterGui.MM2Gui.MainFrame.TabFrames.HomeFrame.Title.UIGradient
+G2L["17"] = Instance.new("UIGradient", G2L["16"]);
+G2L["17"]["Rotation"] = 90;
+G2L["17"]["Transparency"] = NumberSequence.new{NumberSequenceKeypoint.new(0.000, 0),NumberSequenceKeypoint.new(0.420, 0.5625),NumberSequenceKeypoint.new(1.000, 0)};
+G2L["17"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(255, 255, 255)),ColorSequenceKeypoint.new(0.360, Color3.fromRGB(255, 255, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(21, 135, 255))};
+
+-- StarterGui.MM2Gui.MainFrame.TabFrames.HomeFrame.TpButton
+G2L["18"] = Instance.new("TextButton", G2L["15"]);
+G2L["18"]["TextWrapped"] = true;
+G2L["18"]["BorderSizePixel"] = 0;
+G2L["18"]["TextSize"] = 14;
+G2L["18"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["18"]["TextScaled"] = true;
+G2L["18"]["BackgroundColor3"] = Color3.fromRGB(127, 143, 160);
+G2L["18"]["FontFace"] = Font.new([[rbxasset://fonts/families/Jura.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["18"]["Size"] = UDim2.new(0.90091, 0, 0.10805, 0);
+G2L["18"]["LayoutOrder"] = 1;
+G2L["18"]["Name"] = [[TpButton]];
+G2L["18"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["18"]["Text"] = [[Tp All Coins & BeachBalls]];
+G2L["18"]["Position"] = UDim2.new(0.04813, 0, 0.14922, 0);
+
+-- StarterGui.MM2Gui.MainFrame.TabFrames.HomeFrame.TpButton.UICorner
+G2L["19"] = Instance.new("UICorner", G2L["18"]);
+G2L["19"]["CornerRadius"] = UDim.new(0, 6);
+
+-- StarterGui.MM2Gui.MainFrame.TabFrames.HomeFrame.TpButton.LocalScript
+G2L["1a"] = Instance.new("LocalScript", G2L["18"]);
+
+
+-- StarterGui.MM2Gui.MainFrame.TabFrames.HomeFrame.KillallButton
+G2L["1b"] = Instance.new("TextButton", G2L["15"]);
+G2L["1b"]["TextWrapped"] = true;
+G2L["1b"]["BorderSizePixel"] = 0;
+G2L["1b"]["TextSize"] = 14;
+G2L["1b"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1b"]["TextScaled"] = true;
+G2L["1b"]["BackgroundColor3"] = Color3.fromRGB(127, 143, 160);
+G2L["1b"]["FontFace"] = Font.new([[rbxasset://fonts/families/Jura.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["1b"]["Size"] = UDim2.new(0.90091, 0, 0.10805, 0);
+G2L["1b"]["LayoutOrder"] = 2;
+G2L["1b"]["Name"] = [[KillallButton]];
+G2L["1b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1b"]["Text"] = [[Kill All]];
+G2L["1b"]["Position"] = UDim2.new(0.04813, 0, 0.28279, 0);
+
+-- StarterGui.MM2Gui.MainFrame.TabFrames.HomeFrame.KillallButton.UICorner
+G2L["1c"] = Instance.new("UICorner", G2L["1b"]);
+G2L["1c"]["CornerRadius"] = UDim.new(0, 6);
+
+-- StarterGui.MM2Gui.MainFrame.TabFrames.HomeFrame.KillallButton.LocalScript
+G2L["1d"] = Instance.new("LocalScript", G2L["1b"]);
+
+
+-- StarterGui.MM2Gui.MainFrame.TabFrames.HomeFrame.AimBotButton
+G2L["1e"] = Instance.new("TextButton", G2L["15"]);
+G2L["1e"]["TextWrapped"] = true;
+G2L["1e"]["BorderSizePixel"] = 0;
+G2L["1e"]["TextSize"] = 14;
+G2L["1e"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1e"]["TextScaled"] = true;
+G2L["1e"]["BackgroundColor3"] = Color3.fromRGB(127, 143, 160);
+G2L["1e"]["FontFace"] = Font.new([[rbxasset://fonts/families/Jura.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["1e"]["Size"] = UDim2.new(0.90091, 0, 0.10805, 0);
+G2L["1e"]["LayoutOrder"] = 3;
+G2L["1e"]["Name"] = [[AimBotButton]];
+G2L["1e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1e"]["Text"] = [[AimBot]];
+G2L["1e"]["Position"] = UDim2.new(0.04813, 0, 0.43088, 0);
+
+-- StarterGui.MM2Gui.MainFrame.TabFrames.HomeFrame.AimBotButton.UICorner
+G2L["1f"] = Instance.new("UICorner", G2L["1e"]);
+G2L["1f"]["CornerRadius"] = UDim.new(0, 6);
+
+-- StarterGui.MM2Gui.MainFrame.TabFrames.HomeFrame.AimBotButton.LocalScript
+G2L["20"] = Instance.new("LocalScript", G2L["1e"]);
+
+
+-- StarterGui.MM2Gui.MainFrame.TabFrames.HomeFrame.EspButton
+G2L["21"] = Instance.new("TextButton", G2L["15"]);
+G2L["21"]["TextWrapped"] = true;
+G2L["21"]["BorderSizePixel"] = 0;
+G2L["21"]["TextSize"] = 14;
+G2L["21"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["21"]["TextScaled"] = true;
+G2L["21"]["BackgroundColor3"] = Color3.fromRGB(127, 143, 160);
+G2L["21"]["FontFace"] = Font.new([[rbxasset://fonts/families/Jura.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["21"]["Size"] = UDim2.new(0.90091, 0, 0.10805, 0);
+G2L["21"]["LayoutOrder"] = 4;
+G2L["21"]["Name"] = [[EspButton]];
+G2L["21"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["21"]["Text"] = [[Esp]];
+G2L["21"]["Position"] = UDim2.new(0.04813, 0, 0.56446, 0);
+
+-- StarterGui.MM2Gui.MainFrame.TabFrames.HomeFrame.EspButton.UICorner
+G2L["22"] = Instance.new("UICorner", G2L["21"]);
+G2L["22"]["CornerRadius"] = UDim.new(0, 6);
+
+-- StarterGui.MM2Gui.MainFrame.TabFrames.HomeFrame.EspButton.LocalScript
+G2L["23"] = Instance.new("LocalScript", G2L["21"]);
+
+
+-- StarterGui.MM2Gui.MainFrame.TabFrames.HomeFrame.UIListLayout
+G2L["24"] = Instance.new("UIListLayout", G2L["15"]);
+G2L["24"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
+G2L["24"]["Padding"] = UDim.new(0, 4);
+G2L["24"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+
+-- StarterGui.MM2Gui.MainFrame.LocalScript
+G2L["25"] = Instance.new("LocalScript", G2L["2"]);
+
+
+-- StarterGui.MM2Gui.MainFrame.TabFrame.TabButtons.HomeButton.LocalScript
+local function C_13()
+local script = G2L["13"];
+	-- Assuming you have a TextButton in a ScreenGui
+	local button = script.Parent -- Replace with the path to your button
+	local frame = button.Parent.Parent.Parent.TabFrames.HomeFrame
+	
+	local originalSize = button.Size -- Store the original size of the button
+	local originalPosition = button.Position -- Store the original position of the button
+	
+	-- Sizes and positions for hover effect
+	local hoverSize = UDim2.new(originalSize.X.Scale * 1.1, originalSize.X.Offset, originalSize.Y.Scale * 1.1, originalSize.Y.Offset) -- Increase size by 20%
+	local hoverPosition = UDim2.new(originalPosition.X.Scale - (hoverSize.X.Scale - originalSize.X.Scale) / 2, originalPosition.X.Offset, originalPosition.Y.Scale - (hoverSize.Y.Scale - originalSize.Y.Scale) / 2, originalPosition.Y.Offset)
+	
+	-- Sizes and positions for click effect
+	local clickSize = UDim2.new(hoverSize.X.Scale * 0.9, hoverSize.X.Offset, hoverSize.Y.Scale * 0.9, hoverSize.Y.Offset) -- Shrink size by 10% from hover size
+	local clickPosition = UDim2.new(hoverPosition.X.Scale + (hoverSize.X.Scale - clickSize.X.Scale) / 2, hoverPosition.X.Offset, hoverPosition.Y.Scale + (hoverSize.Y.Scale - clickSize.Y.Scale) / 2, hoverPosition.Y.Offset)
+	
+	-- Function to handle mouse entering the button
+	button.MouseEnter:Connect(function()
+	        button:TweenSizeAndPosition(hoverSize, hoverPosition, Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 0.3, true)
+	end)
+	
+	-- Function to handle mouse leaving the button
+	button.MouseLeave:Connect(function()
+	        button:TweenSizeAndPosition(originalSize, originalPosition, Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 0.3, true)
+	end)
+	
+	-- Function to handle button click
+	button.MouseButton1Click:Connect(function()
+	        -- Shrink the button (from hover size)
+	        button:TweenSizeAndPosition(clickSize, clickPosition, Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 0.1, true, function()
+	                -- After shrinking, grow the button back to hover size
+	                button:TweenSizeAndPosition(hoverSize, hoverPosition, Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 0.1, true)
+	                -- Toggle the auto-clicker after the button animation
+	                frame.Visible = true
+	        end)
+	end)
+	
+end;
+task.spawn(C_13);
+-- StarterGui.MM2Gui.MainFrame.TabFrames.HomeFrame.TpButton.LocalScript
+local function C_1a()
+local script = G2L["1a"];
+	local button = script.Parent -- Replace with the path to your button
+	local textLabel = script.Parent -- Find the TextLabel for the button
+	
+	local originalSize = button.Size -- Store the original size of the button
+	local originalPosition = button.Position -- Store the original position of the button
+	
+	-- Sizes and positions for hover effect
+	local hoverSize = UDim2.new(originalSize.X.Scale * 1.1, originalSize.X.Offset, originalSize.Y.Scale * 1.1, originalSize.Y.Offset) -- Increase size by 10%
+	local hoverPosition = UDim2.new(originalPosition.X.Scale - (hoverSize.X.Scale - originalSize.X.Scale) / 2, originalPosition.X.Offset, originalPosition.Y.Scale - (hoverSize.Y.Scale - originalSize.Y.Scale) / 2, originalPosition.Y.Offset)
+	
+	-- Sizes and positions for click effect
+	local clickSize = UDim2.new(hoverSize.X.Scale * 0.9, hoverSize.X.Offset, hoverSize.Y.Scale * 0.9, hoverSize.Y.Offset) -- Shrink size by 10% from hover size
+	local clickPosition = UDim2.new(hoverPosition.X.Scale + (hoverSize.X.Scale - clickSize.X.Scale) / 2, hoverPosition.X.Offset, hoverPosition.Y.Scale + (hoverSize.Y.Scale - clickSize.Y.Scale) / 2, hoverPosition.Y.Offset)
+	
+	-- Variable to track if teleportation is active
+	local teleporting = false
+	
+	-- Function to teleport the player to all parts named "Coin_Server"
+	local function teleportToCoins()
+	        local player = game.Players.LocalPlayer
+	        local character = player.Character or player.CharacterAdded:Wait()
+	        local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+	
+	        local coins = workspace:GetChildren() -- Get all the children of the workspace
+	        for _, child in pairs(coins) do
+	                if child:IsA("BasePart") and child.Name == "Coin_Server" then
+	                        humanoidRootPart.CFrame = child.CFrame -- Teleport the player to the coin
+	                        wait(0.05) -- Short delay between each teleport (adjust this for speed)
+	                end
+	        end
+	end
+	
+	-- Function to handle mouse entering the button
+	button.MouseEnter:Connect(function()
+	        button:TweenSizeAndPosition(hoverSize, hoverPosition, Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 0.3, true)
+	end)
+	
+	-- Function to handle mouse leaving the button
+	button.MouseLeave:Connect(function()
+	        button:TweenSizeAndPosition(originalSize, originalPosition, Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 0.3, true)
+	end)
+	
+	-- Function to handle button click
+	button.MouseButton1Click:Connect(function()
+	        if not teleporting then
+	                teleporting = true
+	                textLabel.Text = "Teleporting..."
+	
+	                -- Trigger teleportation
+	                teleportToCoins()
+	
+	                -- Reset after teleportation
+	                textLabel.Text = "Tp All Coins & BeachBalls"
+	                teleporting = false
+	        end
+	end)
+	
+end;
+task.spawn(C_1a);
+-- StarterGui.MM2Gui.MainFrame.TabFrames.HomeFrame.KillallButton.LocalScript
+local function C_1d()
+local script = G2L["1d"];
+	-- Assuming you have a TextButton in a ScreenGui with a child TextLabel
+	local button = script.Parent -- Replace with the path to your button
+	local textLabel =  script.Parent -- Find the TextLabel for the button
+	
+	local originalSize = button.Size -- Store the original size of the button
+	local originalPosition = button.Position -- Store the original position of the button
+	
+	-- Sizes and positions for hover effect
+	local hoverSize = UDim2.new(originalSize.X.Scale * 1.1, originalSize.X.Offset, originalSize.Y.Scale * 1.1, originalSize.Y.Offset) -- Increase size by 10%
+	local hoverPosition = UDim2.new(originalPosition.X.Scale - (hoverSize.X.Scale - originalSize.X.Scale) / 2, originalPosition.X.Offset, originalPosition.Y.Scale - (hoverSize.Y.Scale - originalSize.Y.Scale) / 2, originalPosition.Y.Offset)
+	
+	-- Sizes and positions for click effect
+	local clickSize = UDim2.new(hoverSize.X.Scale * 0.9, hoverSize.X.Offset, hoverSize.Y.Scale * 0.9, hoverSize.Y.Offset) -- Shrink size by 10% from hover size
+	local clickPosition = UDim2.new(hoverPosition.X.Scale + (hoverSize.X.Scale - clickSize.X.Scale) / 2, hoverPosition.X.Offset, hoverPosition.Y.Scale + (hoverSize.Y.Scale - clickSize.Y.Scale) / 2, hoverPosition.Y.Offset)
+	
+	-- Function to handle mouse entering the button
+	button.MouseEnter:Connect(function()
+	        button:TweenSizeAndPosition(hoverSize, hoverPosition, Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 0.3, true)
+	end)
+	
+	-- Function to handle mouse leaving the button
+	button.MouseLeave:Connect(function()
+	        button:TweenSizeAndPosition(originalSize, originalPosition, Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 0.3, true)
+	end)
+	
+	-- Variable to track if Killing All is active
+	local killingAllActive = false
+	
+	local function teleportAndClickPlayers()
+	        local player = game.Players.LocalPlayer
+	        local character = player.Character
+	
+	        if character and killingAllActive then
+	                local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
+	                if humanoidRootPart then
+	                        for _, targetPlayer in pairs(game.Players:GetPlayers()) do
+	                                if targetPlayer ~= player then
+	                                        local targetCharacter = targetPlayer.Character
+	                                        if targetCharacter and targetCharacter:FindFirstChild("HumanoidRootPart") then
+	                                                -- Teleport to the target player
+	                                                humanoidRootPart.CFrame = targetCharacter.HumanoidRootPart.CFrame
+	
+	                                                -- Simulate a click or interaction
+	                                                -- This assumes you have some sort of "click" action script in your character
+	                                                -- Trigger the click action (for example, simulating a click)
+	                                                -- Replace this with the actual function or event that performs the "click"
+	                                                character:FindFirstChild("Humanoid"):TakeDamage(0)  -- Placeholder for click simulation, replace with actual click action if needed
+	
+	                                                -- Pause briefly to ensure each action occurs in sequence
+	                                                wait(0.1)
+	                                        end
+	                                end
+	                        end
+	                end
+	        end
+	end
+	
+	-- Function to handle button click
+	button.MouseButton1Click:Connect(function()
+	        -- Toggle the killingAllActive state
+	        killingAllActive = not killingAllActive
+	
+	        -- Change the text based on the state
+	        if killingAllActive then
+	                textLabel.Text = "Killing All"
+	                teleportAndClickPlayers() -- Teleport and click players
+	        else
+	                textLabel.Text = "Kill All"
+	        end
+	
+	        -- Shrink the button (from hover size) and then grow back to hover size
+	        button:TweenSizeAndPosition(clickSize, clickPosition, Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 0.1, true, function()
+	                button:TweenSizeAndPosition(hoverSize, hoverPosition, Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 0.1, true)
+	        end)
+	end)
+	
+end;
+task.spawn(C_1d);
+-- StarterGui.MM2Gui.MainFrame.TabFrames.HomeFrame.AimBotButton.LocalScript
+local function C_20()
+local script = G2L["20"];
+	local UIS = game:GetService("UserInputService")
+	local Players = game:GetService("Players")
+	local TweenService = game:GetService("TweenService")
+	local LocalPlayer = Players.LocalPlayer
+	local Camera = workspace.CurrentCamera
+	local RunService = game:GetService("RunService")
+	
+	local followSpeed = 0.1
+	local predictionTime = 0.2
+	local guiOffset = Vector3.new(0, 3, 0) -- Offset for the GUI above the player's head
+	
+	local isLockedOn = false
+	local lockedOnPlayer = nil
+	local targetGui = nil
+	local aimbotEnabled = false
+	
+	-- Assuming the TextButton is in a ScreenGui
+	local button = script.Parent -- Adjust the path if necessary
+	local textLabel = script.Parent -- Adjust the path if necessary
+	
+	-- Function to get the closest player to the mouse
+	local function getClosestPlayer()
+	        local closestPlayer = nil
+	        local shortestDistance = math.huge
+	
+	        for _, player in pairs(Players:GetPlayers()) do
+	                if player ~= LocalPlayer and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+	                        local targetPosition = player.Character.HumanoidRootPart.Position
+	                        local screenPoint = Camera:WorldToViewportPoint(targetPosition)
+	                        local mousePosition = UIS:GetMouseLocation()
+	
+	                        local distance = (Vector2.new(screenPoint.X, screenPoint.Y) - mousePosition).Magnitude
+	
+	                        if distance < shortestDistance then
+	                                shortestDistance = distance
+	                                closestPlayer = player
+	                        end
+	                end
+	        end
+	
+	        return closestPlayer
+	end
+	
+	-- Function to predict the player's position
+	local function predictPosition(targetPlayer)
+	        local rootPart = targetPlayer.Character.HumanoidRootPart
+	        local velocity = rootPart.Velocity
+	        local predictedPosition = rootPart.Position + (velocity * predictionTime)
+	        return predictedPosition
+	end
+	
+	-- Function to smoothly follow the target player
+	local function smoothFollowTarget(targetPlayer)
+	        local predictedPosition = predictPosition(targetPlayer)
+	        local cameraPosition = Camera.CFrame.Position
+	        local direction = (predictedPosition - cameraPosition).Unit
+	
+	        local newCFrame = CFrame.new(cameraPosition, predictedPosition)
+	        local tweenInfo = TweenInfo.new(followSpeed, Enum.EasingStyle.Sine, Enum.EasingDirection.Out)
+	        local tween = TweenService:Create(Camera, tweenInfo, {CFrame = newCFrame})
+	        tween:Play()
+	end
+	
+	-- Function to create the target GUI
+	local function createTargetGui()
+	        local billboardGui = Instance.new("BillboardGui")
+	        billboardGui.Size = UDim2.new(0, 200, 0, 100)
+	        billboardGui.StudsOffset = guiOffset
+	        billboardGui.AlwaysOnTop = true
+	
+	        local frame = Instance.new("Frame")
+	        frame.Size = UDim2.new(1, 0, 1, 0)
+	        frame.BackgroundTransparency = 0.5
+	        frame.BackgroundColor3 = Color3.new(0, 0, 0)
+	        frame.Parent = billboardGui
+	
+	        local usernameLabel = Instance.new("TextLabel")
+	        usernameLabel.Name = "UsernameLabel"
+	        usernameLabel.Size = UDim2.new(1, 0, 0.33, 0)
+	        usernameLabel.BackgroundTransparency = 1
+	        usernameLabel.TextColor3 = Color3.new(1, 1, 1)
+	        usernameLabel.Font = Enum.Font.SourceSans
+	        usernameLabel.TextScaled = true
+	        usernameLabel.Parent = frame
+	
+	        local healthLabel = Instance.new("TextLabel")
+	        healthLabel.Name = "HealthLabel"
+	        healthLabel.Size = UDim2.new(1, 0, 0.33, 0)
+	        healthLabel.Position = UDim2.new(0, 0, 0.33, 0)
+	        healthLabel.BackgroundTransparency = 1
+	        healthLabel.TextColor3 = Color3.new(1, 1, 1)
+	        healthLabel.Font = Enum.Font.SourceSans
+	        healthLabel.TextScaled = true
+	        healthLabel.Parent = frame
+	
+	        local distanceLabel = Instance.new("TextLabel")
+	        distanceLabel.Name = "DistanceLabel"
+	        distanceLabel.Size = UDim2.new(1, 0, 0.33, 0)
+	        distanceLabel.Position = UDim2.new(0, 0, 0.66, 0)
+	        distanceLabel.BackgroundTransparency = 1
+	        distanceLabel.TextColor3 = Color3.new(1, 1, 1)
+	        distanceLabel.Font = Enum.Font.SourceSans
+	        distanceLabel.TextScaled = true
+	        distanceLabel.Parent = frame
+	
+	        return billboardGui
+	end
+	
+	-- Function to update the target GUI
+	local function updateTargetGui(targetPlayer)
+	        if targetGui then
+	                local humanoid = targetPlayer.Character:FindFirstChild("Humanoid")
+	                if humanoid then
+	                        targetGui.Frame.UsernameLabel.Text = "Username: " .. targetPlayer.Name
+	                        targetGui.Frame.HealthLabel.Text = "Health: " .. math.floor(humanoid.Health) .. " / " .. math.floor(humanoid.MaxHealth)
+	                        local distance = (LocalPlayer.Character.HumanoidRootPart.Position - targetPlayer.Character.HumanoidRootPart.Position).Magnitude
+	                        targetGui.Frame.DistanceLabel.Text = "Distance: " .. math.floor(distance) .. " studs"
+	                end
+	        end
+	end
+	
+	-- Function to attach the GUI to the target player
+	local function attachGuiToPlayer(targetPlayer)
+	        if targetGui then
+	                targetGui:Destroy()
+	        end
+	        targetGui = createTargetGui()
+	        targetGui.Adornee = targetPlayer.Character:FindFirstChild("HumanoidRootPart")
+	        targetGui.Parent = targetPlayer.Character
+	end
+	
+	-- Function to lock on to the target player
+	local function lockOnTarget()
+	        lockedOnPlayer = getClosestPlayer()
+	        if lockedOnPlayer then
+	                isLockedOn = true
+	                attachGuiToPlayer(lockedOnPlayer)
+	                RunService:BindToRenderStep("FollowTarget", Enum.RenderPriority.Camera.Value + 1, function()
+	                        if lockedOnPlayer and lockedOnPlayer.Character and lockedOnPlayer.Character:FindFirstChild("HumanoidRootPart") then
+	                                smoothFollowTarget(lockedOnPlayer)
+	                                updateTargetGui(lockedOnPlayer)
+	                        else
+	                                isLockedOn = false
+	                                lockedOnPlayer = nil
+	                                unlockTarget()
+	                        end
+	                end)
+	        end
+	end
+	
+	-- Function to unlock the target player
+	local function unlockTarget()
+	        isLockedOn = false
+	        lockedOnPlayer = nil
+	        if targetGui then
+	                targetGui:Destroy()
+	                targetGui = nil
+	        end
+	        RunService:UnbindFromRenderStep("FollowTarget")
+	end
+	
+	-- Event listener for the E key
+	UIS.InputBegan:Connect(function(input)
+	        if input.KeyCode == Enum.KeyCode.E and aimbotEnabled then
+	                lockOnTarget()
+	        end
+	end)
+	
+	UIS.InputEnded:Connect(function(input)
+	        if input.KeyCode == Enum.KeyCode.E then
+	                unlockTarget()
+	        end
+	end)
+	
+	-- Function to toggle the aimbot
+	button.MouseButton1Click:Connect(function()
+	        aimbotEnabled = not aimbotEnabled
+	
+	        -- Change the text based on the state
+	        if aimbotEnabled then
+	                textLabel.Text = "Aimbot (On)"
+	        else
+	                textLabel.Text = "Aimbot"
+	                unlockTarget() -- Ensure the target is unlocked when turning off
+	        end
+	end)
+	
+end;
+task.spawn(C_20);
+-- StarterGui.MM2Gui.MainFrame.TabFrames.HomeFrame.EspButton.LocalScript
+local function C_23()
+local script = G2L["23"];
+	local UIS = game:GetService("UserInputService")
+	local Players = game:GetService("Players")
+	local RunService = game:GetService("RunService")
+	local LocalPlayer = Players.LocalPlayer
+	
+	local espEnabled = false
+	local roleColors = {
+	        Murderer = Color3.fromRGB(255, 0, 0), -- Red
+	        Sheriff = Color3.fromRGB(0, 0, 255),  -- Blue
+	        Default = Color3.fromRGB(0, 255, 0)   -- Green for others
+	}
+	
+	local button = script.Parent -- Adjust the path if necessary
+	local textLabel = script.Parent -- Adjust the path if necessary
+	
+	-- Function to add highlight to a player
+	local function addHighlight(player)
+	        if player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+	                local highlight = Instance.new("Highlight")
+	                highlight.FillColor = roleColors.Default
+	                highlight.OutlineTransparency = 0.5
+	                highlight.Adornee = player.Character
+	                highlight.Parent = player.Character
+	        end
+	end
+	
+	-- Function to remove highlight from a player
+	local function removeHighlight(player)
+	        if player.Character then
+	                local highlight = player.Character:FindFirstChildOfClass("Highlight")
+	                if highlight then
+	                        highlight:Destroy()
+	                end
+	        end
+	end
+	
+	-- Function to update highlight color based on role
+	local function updateHighlight(player)
+	        local role = player:GetAttribute("Role")
+	        local highlight = player.Character and player.Character:FindFirstChildOfClass("Highlight")
+	
+	        if highlight then
+	                if role == "Murderer" then
+	                        highlight.FillColor = roleColors.Murderer
+	                elseif role == "Sheriff" then
+	                        highlight.FillColor = roleColors.Sheriff
+	                else
+	                        highlight.FillColor = roleColors.Default
+	                end
+	        end
+	end
+	
+	-- Function to toggle ESP
+	button.MouseButton1Click:Connect(function()
+	        espEnabled = not espEnabled
+	
+	        if espEnabled then
+	                textLabel.Text = "ESP (On)"
+	                for _, player in pairs(Players:GetPlayers()) do
+	                        addHighlight(player)
+	                        updateHighlight(player)
+	                end
+	        else
+	                textLabel.Text = "ESP"
+	                for _, player in pairs(Players:GetPlayers()) do
+	                        removeHighlight(player)
+	                end
+	        end
+	end)
+	
+	-- Event listener for when a new player joins
+	Players.PlayerAdded:Connect(function(player)
+	        player.CharacterAdded:Connect(function()
+	                if espEnabled then
+	                        addHighlight(player)
+	                        updateHighlight(player)
+	                end
+	        end)
+	end)
+	
+	-- Event listener for when the role of a player is set or changes
+	Players.PlayerAdded:Connect(function(player)
+	        player:GetAttributeChangedSignal("Role"):Connect(function()
+	                if espEnabled then
+	                        updateHighlight(player)
+	                end
+	        end)
+	end)
+	
+	-- Event listener for when a new game starts
+	local function onNewGame()
+	        if espEnabled then
+	                for _, player in pairs(Players:GetPlayers()) do
+	                        updateHighlight(player)
+	                end
+	        end
+	end
+	
+	-- Hook this function to your game's "new game" event
+	-- Example:
+	-- Game.NewGameEvent.OnClientEvent:Connect(onNewGame)
+	
+end;
+task.spawn(C_23);
+-- StarterGui.MM2Gui.MainFrame.LocalScript
+local function C_25()
+local script = G2L["25"];
+	script.Parent.Active = true
+	script.Parent.Draggable = true
+end;
+task.spawn(C_25);
+
+return G2L["1"], require;
